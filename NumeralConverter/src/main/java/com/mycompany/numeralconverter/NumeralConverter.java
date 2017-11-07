@@ -5,25 +5,46 @@
  */
 package com.mycompany.numeralconverter;
 
+import java.util.TreeMap;
 
-import java.util.Hashtable;
+
+
 
 
 /**
  *
  * @author samq2
  */
-public class NumeralConverter {   Hashtable<Integer, String> ht = new Hashtable<Integer, String>();
-        ht.put(1, "I");
-        hashtable.put(4, "IV");
-        hashtable.put(9, "IX");
-        hashtable.put(10, "X");
-        hashtable.put(40, "XL");
-        hashtable.put(90, "XC");
-        hashtable.put(400, "CD");
-        hashtable.put(500, "D");
-        hashtable.put(1000, "M");
+public class NumeralConverter {   
+   private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
+
+    static {
+
+        map.put(1000, "M");
+        map.put(900, "CM");
+        map.put(500, "D");
+        map.put(400, "CD");
+        map.put(100, "C");
+        map.put(90, "XC");
+        map.put(50, "L");
+        map.put(40, "XL");
+        map.put(10, "X");
+        map.put(9, "IX");
+        map.put(5, "V");
+        map.put(4, "IV");
+        map.put(1, "I");
+
+    }
+
+    public final static String toRoman(int number) {
+        int l =  map.floorKey(number);
+        if ( number == l ) {
+            return map.get(number);
+        }
+        return map.get(l) + toRoman(number-l);
+    }
+
+}
         
     
     
-}
