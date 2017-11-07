@@ -16,6 +16,12 @@
     
     <dependencies>
         <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.3.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -52,7 +58,7 @@
                 <configuration>
                     <httpConnector>
                         <!-- make jetty listen on 127.0.0.1 for better security -->
-                        <!--host>127.0.0.1</host-->
+                        <host>127.0.0.1</host>
                     </httpConnector>
                     <scanIntervalSeconds>3</scanIntervalSeconds>
                     <webAppConfig>
