@@ -9,9 +9,7 @@ package com.mycompany.numeralconverter;
  *
  * @author samq2
  */
-public class Converter {
-    public static void main (String[] args){
-        int num = 1243;
-        System.out.print(num+NumeralConverter.toRoman(num));
-    }    
+
+public class ConverterClient {
+ 
 }

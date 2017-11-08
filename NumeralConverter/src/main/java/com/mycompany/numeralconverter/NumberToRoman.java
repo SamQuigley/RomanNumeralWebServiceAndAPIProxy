@@ -5,18 +5,15 @@
  */
 package com.mycompany.numeralconverter;
 
-import java.util.TreeMap;
-
-
-
-
-
 /**
  *
  * @author samq2
  */
-public class NumeralConverter {   
-   private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
+import java.util.TreeMap;
+
+public class NumberToRoman {
+    
+    private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
 
     static {
 
@@ -37,14 +34,18 @@ public class NumeralConverter {
     }
 
     public final static String toRoman(int number) {
-        int l =  map.floorKey(number);
-        if ( number == l ) {
+        int l = map.floorKey(number);
+        if (number == l) {
             return map.get(number);
         }
-        return map.get(l) + toRoman(number-l);
+        return map.get(l) + toRoman(number - l);
     }
 
+    public void RomanConversion() {
+
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(i + "\t =\t " + NumberToRoman.toRoman(i));
+        }
+
+    }
 }
-        
-    
-    
