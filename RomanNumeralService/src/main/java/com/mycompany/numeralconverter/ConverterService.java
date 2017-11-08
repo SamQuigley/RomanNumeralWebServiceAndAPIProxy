@@ -26,6 +26,14 @@ public class ConverterService {
     /*
     Roman to number get request will go here
     */
+   
+    @Path("/{arabicNumeral}")
+    public Response convertToArabic(@PathParam("arabicNumeral") String roman){
+        RomanToNumber romanConverter = new RomanToNumber();
+        int arabicNumeral = romanConverter.romanToNumber(roman);
+        String converterOutput = roman + " Converted to Aarabic Numerals is -> " + arabicNumeral;
+        return Response.status(200).entity(converterOutput).build();
+    }
     
     
     
