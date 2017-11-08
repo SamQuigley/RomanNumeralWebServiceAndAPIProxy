@@ -14,14 +14,7 @@ import javax.ws.rs.core.Response;
 public class ConverterService {
 
     @GET
-    @Path("/ServiceWelcome")
-    public Response Welcome(@PathParam("ServiceWelcome") String hello) {
-        String output = hello + " welcome to our roman numeral conversion service";
-        return Response.status(200).entity(output).build();
-    }
-
-    @GET
-    @Path("/romanNumeral")
+    @Path("/{romanNumeral}")
     public Response convertToRoman(@PathParam("romanNumeral") int num) {
         NumberToRoman romanConverter = new NumberToRoman();
         String romanNumeral = romanConverter.toRoman(num);
