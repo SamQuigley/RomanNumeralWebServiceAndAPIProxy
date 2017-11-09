@@ -17,25 +17,17 @@ public class GetClient {
     public static void main(String[] args){
         try{
 
-//            int port = 8080;
             String apiKey = "0b78371d138986d5217864bf2166b826";
             String city = "Dublin";
             
             String getUrl = "http://api.openweathermap.org/data/2.5/weather"; 
                     
-            //"http://localhost:" +port+ "/api/mortgage/payment";
-
-
             Client client = Client.create();
             WebResource target = client.resource(getUrl);
 
             ClientResponse response = target
-                    .queryParam("q", city).queryParam("appid",apiKey)
-//                    .queryParam("interest", "4.5")
-//                    .queryParam("term", "10")
+                    .queryParam("q", city).queryParam("appid",apiKey)                    
                     .get(ClientResponse.class);
-                    
-            
             String output = response.getEntity(String.class);
             System.out.println(output);
             
