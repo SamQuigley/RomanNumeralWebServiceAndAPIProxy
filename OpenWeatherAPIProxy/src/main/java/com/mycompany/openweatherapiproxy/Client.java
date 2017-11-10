@@ -3,7 +3,7 @@
  /**
  *
  * @author Sam Quigley, 14474028
- * reference - computing suppoer - web service and api support class
+ * reference - computing support - web service and api support class
  * Repo - https://github.com/SamQuigley/WebServiceAndAPI
  */
 
