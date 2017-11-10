@@ -11,10 +11,12 @@ import java.util.Map;
 /**
  *
  * @author Mateusz Matuszczyk
+ * Repo - https://github.com/SamQuigley/WebServiceAndAPI
  */
 public class RomanToNumber {
 
-private static final Map<Character, Integer> map = new HashMap<>(7);
+    private static final Map<Character, Integer> map = new HashMap<>(7);
+
     static {
         map.put('I', 1);
         map.put('V', 5);
@@ -24,19 +26,17 @@ private static final Map<Character, Integer> map = new HashMap<>(7);
         map.put('D', 500);
         map.put('M', 1000);
     }
- 
-public int romanToNumber(String romanNumeral) {
-    int arabicNumeral = 0;
-    int roman_len = romanNumeral.length() - 1;
-    for (int i = 0; i < roman_len; i++) {
-        if (map.get(romanNumeral.charAt(i)) < map.get(romanNumeral.charAt(i + 1))) {
-            arabicNumeral -= map.get(romanNumeral.charAt(i));
-        } else {
-            arabicNumeral += map.get(romanNumeral.charAt(i));
+
+    public int romanToNumber(String romanNumeral) {
+        int arabicNumeral = 0;
+        int roman_len = romanNumeral.length() - 1;
+        for (int i = 0; i < roman_len; i++) {
+            if (map.get(romanNumeral.charAt(i)) < map.get(romanNumeral.charAt(i + 1))) {
+                arabicNumeral -= map.get(romanNumeral.charAt(i));
+            } else {
+                arabicNumeral += map.get(romanNumeral.charAt(i));
+            }
         }
+        return arabicNumeral += map.get(romanNumeral.charAt(roman_len));
     }
-    return arabicNumeral += map.get(romanNumeral.charAt(roman_len));
-}
-    
-    
 }

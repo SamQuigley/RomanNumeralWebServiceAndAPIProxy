@@ -1,14 +1,13 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ /**
+ *
+ * @author Sam Quigley, 14474028
+ * Repo - https://github.com/SamQuigley/WebServiceAndAPI
  */
+
 package com.mycompany.OpenWeatherAPIProxy;
 
-/**
- *
- * @author Sam Quigley
- */
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,10 +19,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-/**
- *
- * @author Glen
- */
 public class Client {
     
     private String baseURL = "localhost";
@@ -88,6 +83,5 @@ public class Client {
           // GET
           HttpResponse getResponse = client.getRequest("/api/weather/{city}");
           client.printResponse(getResponse);
-         
     }
 }
