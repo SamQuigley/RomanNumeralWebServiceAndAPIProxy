@@ -3,6 +3,7 @@
  /**
  *
  * @author Sam Quigley, 14474028
+ * reference - computing suppoer - web service and api support class
  * Repo - https://github.com/SamQuigley/WebServiceAndAPI
  */
 
@@ -81,7 +82,11 @@ public class Client {
     public static void main(String[] args) throws IOException {
 	  Client client = new Client("localhost", 8080);       
           // GET
-          HttpResponse getResponse = client.getRequest("/api/weather/{city}");
-          client.printResponse(getResponse);
+          HttpResponse getResponseW = client.getRequest("/api/weather/{city}");
+          client.printResponse(getResponseW);
+           // GET
+          HttpResponse getResponseF = client.getRequest("/api/forecast/{city}");
+          client.printResponse(getResponseF);
+          
     }
 }
